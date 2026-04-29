@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.UserDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.UserDTO" resultType="com.beauty.api.dto.UserDTO">
+        select
+        user.*
+        from user user
+        <where>
+            <if test="id != null and id != ''">and user.id = #{id}</if>
+            <if test="username != null and username != ''">and user.username = #{username}</if>
+            <if test="password != null and password != ''">and user.password = #{password}</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="age != null and age != ''">and user.age = #{age}</if>
+            <if test="sex != null and sex != ''">and user.sex = #{sex}</if>
+            <if test="tel != null and tel != ''">and user.tel = #{tel}</if>
+            <if test="info != null and info != ''">and user.info = #{info}</if>
+            <if test="createTime != null and createTime != ''">and user.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.UserDTO" resultType="java.lang.Integer">
+        select count(*) from user user
+        <where>
+            <if test="id != null and id != ''">and user.id = #{id}</if>
+            <if test="username != null and username != ''">and user.username = #{username}</if>
+            <if test="password != null and password != ''">and user.password = #{password}</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="age != null and age != ''">and user.age = #{age}</if>
+            <if test="sex != null and sex != ''">and user.sex = #{sex}</if>
+            <if test="tel != null and tel != ''">and user.tel = #{tel}</if>
+            <if test="info != null and info != ''">and user.info = #{info}</if>
+            <if test="createTime != null and createTime != ''">and user.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

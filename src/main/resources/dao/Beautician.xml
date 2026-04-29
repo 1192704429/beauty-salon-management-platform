@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.BeauticianDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.BeauticianDTO" resultType="com.beauty.api.dto.BeauticianDTO">
+        select
+        beautician.*
+        from beautician beautician
+        <where>
+            <if test="id != null and id != ''">and beautician.id = #{id}</if>
+            <if test="jobId != null and jobId != ''">and beautician.job_id = #{jobId}</if>
+            <if test="name != null and name != ''">and beautician.name like concat('%',#{name},'%')</if>
+            <if test="username != null and username != ''">and beautician.username = #{username}</if>
+            <if test="password != null and password != ''">and beautician.password = #{password}</if>
+            <if test="sex != null and sex != ''">and beautician.sex = #{sex}</if>
+            <if test="age != null and age != ''">and beautician.age = #{age}</if>
+            <if test="avatar != null and avatar != ''">and beautician.avatar = #{avatar}</if>
+            <if test="info != null and info != ''">and beautician.info = #{info}</if>
+            <if test="status != null and status != ''">and beautician.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and beautician.create_time = #{createTime}</if>
+            <if test="recomment != null and recomment != ''">and beautician.recomment = #{recomment}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.BeauticianDTO" resultType="java.lang.Integer">
+        select count(*) from beautician beautician
+        <where>
+            <if test="id != null and id != ''">and beautician.id = #{id}</if>
+            <if test="jobId != null and jobId != ''">and beautician.job_id = #{jobId}</if>
+            <if test="name != null and name != ''">and beautician.name like concat('%',#{name},'%')</if>
+            <if test="username != null and username != ''">and beautician.username = #{username}</if>
+            <if test="password != null and password != ''">and beautician.password = #{password}</if>
+            <if test="sex != null and sex != ''">and beautician.sex = #{sex}</if>
+            <if test="age != null and age != ''">and beautician.age = #{age}</if>
+            <if test="avatar != null and avatar != ''">and beautician.avatar = #{avatar}</if>
+            <if test="info != null and info != ''">and beautician.info = #{info}</if>
+            <if test="status != null and status != ''">and beautician.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and beautician.create_time = #{createTime}</if>
+            <if test="createTime != null and createTime != ''">and beautician.create_time = #{createTime}</if>
+            <if test="recomment != null and recomment != ''">and beautician.recomment = #{recomment}</if>
+        </where>
+    </select>
+
+</mapper>

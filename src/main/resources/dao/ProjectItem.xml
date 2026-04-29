@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.ProjectItemDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.ProjectItemDTO" resultType="com.beauty.api.dto.ProjectItemDTO">
+        select
+        projectItem.*,
+        beautyProjects.title,
+        items.name,
+        items.img
+        from project_item projectItem
+        left join beauty_projects beautyProjects on projectItem.project_id = beautyProjects.id
+		left join items items on projectItem.item_id = items.id
+        <where>
+            <if test="id != null and id != ''">and projectItem.id = #{id}</if>
+            <if test="projectId != null and projectId != ''">and projectItem.project_id = #{projectId}</if>
+            <if test="itemId != null and itemId != ''">and projectItem.item_id = #{itemId}</if>
+            <if test="num != null and num != ''">and projectItem.num = #{num}</if>
+            <if test="createTime != null and createTime != ''">and projectItem.create_time = #{createTime}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="name != null and name != ''">and items.name like concat('%',#{name},'%')</if>
+            <if test="img != null and img != ''">and items.img = #{img}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.ProjectItemDTO" resultType="java.lang.Integer">
+        select count(*) from project_item projectItem
+        left join beauty_projects beautyProjects on projectItem.project_id = beautyProjects.id
+		left join items items on projectItem.item_id = items.id
+        <where>
+            <if test="id != null and id != ''">and projectItem.id = #{id}</if>
+            <if test="projectId != null and projectId != ''">and projectItem.project_id = #{projectId}</if>
+            <if test="itemId != null and itemId != ''">and projectItem.item_id = #{itemId}</if>
+            <if test="num != null and num != ''">and projectItem.num = #{num}</if>
+            <if test="createTime != null and createTime != ''">and projectItem.create_time = #{createTime}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="name != null and name != ''">and items.name like concat('%',#{name},'%')</if>
+            <if test="img != null and img != ''">and items.img = #{img}</if>
+        </where>
+    </select>
+
+</mapper>

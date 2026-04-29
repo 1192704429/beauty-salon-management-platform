@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.SubscribesDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.SubscribesDTO" resultType="com.beauty.api.dto.SubscribesDTO">
+        select
+        subscribes.*,
+        beautyProjects.title,
+        beautyProjects.info,
+        beautyProjects.cover_img,
+        beautyProjects.price,
+        user.nick_name,
+        user.avatar,
+        user.tel
+        from subscribes subscribes
+        left join beauty_projects beautyProjects on subscribes.project_id = beautyProjects.id
+		left join user user on subscribes.user_id = user.id
+        <where>
+            <if test="id != null and id != ''">and subscribes.id = #{id}</if>
+            <if test="bid != null and bid != ''">and subscribes.bid = #{bid}</if>
+            <if test="projectId != null and projectId != ''">and subscribes.project_id = #{projectId}</if>
+            <if test="userId != null and userId != ''">and subscribes.user_id = #{userId}</if>
+            <if test="startTime != null and startTime != ''">and subscribes.start_time = #{startTime}</if>
+            <if test="createTime != null and createTime != ''">and subscribes.create_time = #{createTime}</if>
+            <if test="status != null and status != ''">and subscribes.status = #{status}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="tel != null and tel != ''">and user.tel = #{tel}</if>
+        </where>
+		order by subscribes.id desc
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.SubscribesDTO" resultType="java.lang.Integer">
+        select count(*) from subscribes subscribes
+        left join beauty_projects beautyProjects on subscribes.project_id = beautyProjects.id
+		left join user user on subscribes.user_id = user.id
+        <where>
+            <if test="id != null and id != ''">and subscribes.id = #{id}</if>
+            <if test="bid != null and bid != ''">and subscribes.bid = #{bid}</if>
+            <if test="projectId != null and projectId != ''">and subscribes.project_id = #{projectId}</if>
+            <if test="userId != null and userId != ''">and subscribes.user_id = #{userId}</if>
+            <if test="startTime != null and startTime != ''">and subscribes.start_time = #{startTime}</if>
+            <if test="createTime != null and createTime != ''">and subscribes.create_time = #{createTime}</if>
+            <if test="status != null and status != ''">and subscribes.status = #{status}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="tel != null and tel != ''">and user.tel = #{tel}</if>
+        </where>
+    </select>
+
+</mapper>

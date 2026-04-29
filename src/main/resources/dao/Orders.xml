@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.OrdersDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.OrdersDTO" resultType="com.beauty.api.dto.OrdersDTO">
+        select
+        orders.*,
+        user.nick_name,
+        user.avatar,
+        beautyProjects.title,
+        beautician.job_id,
+        beautician.name
+        from orders orders
+        left join user user on orders.user_id = user.id
+		left join beauty_projects beautyProjects on orders.project_id = beautyProjects.id
+		left join beautician beautician on orders.beautician_id = beautician.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="projectId != null and projectId != ''">and orders.project_id = #{projectId}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no like concat('%',#{orderNo},'%')</if>
+            <if test="beauticianId != null and beauticianId != ''">and orders.beautician_id = #{beauticianId}</if>
+            <if test="money != null and money != ''">and orders.money = #{money}</if>
+            <if test="status != null and status != ''">and orders.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="endTime != null and endTime != ''">and orders.end_time = #{endTime}</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="jobId != null and jobId != ''">and beautician.job_id = #{jobId}</if>
+            <if test="name != null and name != ''">and beautician.name like concat('%',#{name},'%')</if>
+            <if test="month != null and month != ''">and DATE_FORMAT(orders.create_time, '%Y-%m') = #{month}</if>
+
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.OrdersDTO" resultType="java.lang.Integer">
+        select count(*) from orders orders
+        left join user user on orders.user_id = user.id
+		left join beauty_projects beautyProjects on orders.project_id = beautyProjects.id
+		left join beautician beautician on orders.beautician_id = beautician.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="projectId != null and projectId != ''">and orders.project_id = #{projectId}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no like concat('%',#{orderNo},'%')</if>
+            <if test="beauticianId != null and beauticianId != ''">and orders.beautician_id = #{beauticianId}</if>
+            <if test="money != null and money != ''">and orders.money = #{money}</if>
+            <if test="status != null and status != ''">and orders.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="endTime != null and endTime != ''">and orders.end_time = #{endTime}</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="jobId != null and jobId != ''">and beautician.job_id = #{jobId}</if>
+            <if test="name != null and name != ''">and beautician.name like concat('%',#{name},'%')</if>
+            <if test="month != null and month != ''">and DATE_FORMAT(orders.create_time, '%Y-%m') = #{month}</if>
+        </where>
+    </select>
+
+</mapper>

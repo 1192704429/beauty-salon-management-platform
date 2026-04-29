@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.NewsDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.NewsDTO" resultType="com.beauty.api.dto.NewsDTO">
+        select
+        news.*
+        from news news
+        <where>
+            <if test="id != null and id != ''">and news.id = #{id}</if>
+            <if test="title != null and title != ''">and news.title like concat('%',#{title},'%')</if>
+            <if test="coverImg != null and coverImg != ''">and news.cover_img = #{coverImg}</if>
+            <if test="content != null and content != ''">and news.content = #{content}</if>
+            <if test="detail != null and detail != ''">and news.detail = #{detail}</if>
+            <if test="status != null and status != ''">and news.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and news.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.NewsDTO" resultType="java.lang.Integer">
+        select count(*) from news news
+        <where>
+            <if test="id != null and id != ''">and news.id = #{id}</if>
+            <if test="title != null and title != ''">and news.title like concat('%',#{title},'%')</if>
+            <if test="coverImg != null and coverImg != ''">and news.cover_img = #{coverImg}</if>
+            <if test="content != null and content != ''">and news.content = #{content}</if>
+            <if test="detail != null and detail != ''">and news.detail = #{detail}</if>
+            <if test="status != null and status != ''">and news.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and news.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

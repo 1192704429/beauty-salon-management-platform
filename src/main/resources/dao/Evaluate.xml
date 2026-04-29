@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.EvaluateDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.EvaluateDTO" resultType="com.beauty.api.dto.EvaluateDTO">
+        select
+        evaluate.*,
+        orders.order_no,
+        beautyProjects.title,
+        user.nick_name,
+        user.avatar
+        from evaluate evaluate
+        left join orders orders on evaluate.order_id = orders.id
+		left join beauty_projects beautyProjects on evaluate.project_id = beautyProjects.id
+		left join user user on evaluate.user_id = user.id
+        <where>
+            <if test="id != null and id != ''">and evaluate.id = #{id}</if>
+            <if test="orderId != null and orderId != ''">and evaluate.order_id = #{orderId}</if>
+            <if test="projectId != null and projectId != ''">and evaluate.project_id = #{projectId}</if>
+            <if test="userId != null and userId != ''">and evaluate.user_id = #{userId}</if>
+            <if test="content != null and content != ''">and evaluate.content = #{content}</if>
+            <if test="createTime != null and createTime != ''">and evaluate.create_time = #{createTime}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no like concat('%',#{orderNo},'%')</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.EvaluateDTO" resultType="java.lang.Integer">
+        select count(*) from evaluate evaluate
+        left join orders orders on evaluate.order_id = orders.id
+		left join beauty_projects beautyProjects on evaluate.project_id = beautyProjects.id
+		left join user user on evaluate.user_id = user.id
+        <where>
+            <if test="id != null and id != ''">and evaluate.id = #{id}</if>
+            <if test="orderId != null and orderId != ''">and evaluate.order_id = #{orderId}</if>
+            <if test="projectId != null and projectId != ''">and evaluate.project_id = #{projectId}</if>
+            <if test="userId != null and userId != ''">and evaluate.user_id = #{userId}</if>
+            <if test="content != null and content != ''">and evaluate.content = #{content}</if>
+            <if test="createTime != null and createTime != ''">and evaluate.create_time = #{createTime}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no like concat('%',#{orderNo},'%')</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="nickName != null and nickName != ''">and user.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and user.avatar = #{avatar}</if>
+        </where>
+    </select>
+
+</mapper>

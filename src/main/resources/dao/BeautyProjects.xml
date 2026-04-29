@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beauty.api.dao.BeautyProjectsDao">
+
+    <select id="findList" parameterType="com.beauty.api.dto.BeautyProjectsDTO" resultType="com.beauty.api.dto.BeautyProjectsDTO">
+        select
+        beautyProjects.*
+        from beauty_projects beautyProjects
+        <where>
+            <if test="id != null and id != ''">and beautyProjects.id = #{id}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="info != null and info != ''">and beautyProjects.info = #{info}</if>
+            <if test="price != null and price != ''">and beautyProjects.price = #{price}</if>
+            <if test="banner != null and banner != ''">and beautyProjects.banner = #{banner}</if>
+            <if test="detail != null and detail != ''">and beautyProjects.detail = #{detail}</if>
+            <if test="coverImg != null and coverImg != ''">and beautyProjects.cover_img = #{coverImg}</if>
+            <if test="createTime != null and createTime != ''">and beautyProjects.create_time = #{createTime}</if>
+            <if test="status != null and status != ''">and beautyProjects.status = #{status}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.beauty.api.dto.BeautyProjectsDTO" resultType="java.lang.Integer">
+        select count(*) from beauty_projects beautyProjects
+        <where>
+            <if test="id != null and id != ''">and beautyProjects.id = #{id}</if>
+            <if test="title != null and title != ''">and beautyProjects.title like concat('%',#{title},'%')</if>
+            <if test="info != null and info != ''">and beautyProjects.info = #{info}</if>
+            <if test="price != null and price != ''">and beautyProjects.price = #{price}</if>
+            <if test="banner != null and banner != ''">and beautyProjects.banner = #{banner}</if>
+            <if test="detail != null and detail != ''">and beautyProjects.detail = #{detail}</if>
+            <if test="coverImg != null and coverImg != ''">and beautyProjects.cover_img = #{coverImg}</if>
+            <if test="createTime != null and createTime != ''">and beautyProjects.create_time = #{createTime}</if>
+            <if test="status != null and status != ''">and beautyProjects.status = #{status}</if>
+        </where>
+    </select>
+
+</mapper>
