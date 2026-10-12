@@ -17,7 +17,7 @@
 | 用户端 | 用户 |
 
 
-![功能模块图](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/azhou_promotion/img/module_structure/func_module_69160cd5f1d24c1bbc79576b24e72f30.png)
+![功能模块图](docs/images/01-func-module.png)
 
 
 ## 三、技术栈说明
@@ -48,59 +48,59 @@
 
 登录页：管理员输入账号密码登录美容院后台
 
-![登录页：管理员输入账号密码登录美容院后台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/5bed4366-1d3b-4f74-8245-77fb2badd324.png)
+![登录页：管理员输入账号密码登录美容院后台](docs/images/02-deng-lu.png)
 
 数据分析页：展示顾客与产品销售的相关统计数据
 
-![数据分析页：展示顾客与产品销售的相关统计数据](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/767ec293-ac5c-4314-8489-7c962a992627.png)
+![数据分析页：展示顾客与产品销售的相关统计数据](docs/images/03-shu-ju-fen-xi.png)
 
 轮播图管理页：对系统轮播图进行增删改管理
 
-![轮播图管理页：对系统轮播图进行增删改管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/48eaaba6-ba97-4253-8505-9b54da5af001.png)
+![轮播图管理页：对系统轮播图进行增删改管理](docs/images/04-lun-bo-tu-guan-li.png)
 
 美容师管理：管理员查看并管理系统中的美容师信息
 
-![美容师管理：管理员查看并管理系统中的美容师信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/e0857395-dfa7-4913-8a6e-ac2b24cd75d1.png)
+![美容师管理：管理员查看并管理系统中的美容师信息](docs/images/05-mei-rong-shi-guan-li.png)
 
 顾客管理页：管理顾客信息，支持增删改查询操作
 
-![顾客管理页：管理顾客信息，支持增删改查询操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/da05872a-09d9-4bec-81f1-9bfba4bda686.png)
+![顾客管理页：管理顾客信息，支持增删改查询操作](docs/images/06-gu-ke-guan-li.png)
 
 美容项目管理页：管理员管理平台的所有美容项目信息
 
-![美容项目管理页：管理员管理平台的所有美容项目信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/b479ff44-3eb5-4d05-8a02-7f29269fc61f.png)
+![美容项目管理页：管理员管理平台的所有美容项目信息](docs/images/07-mei-rong-xiang-mu-guan-li.png)
 
 美容项目管理：修改光子嫩肤美容项目的相关信息
 
-![美容项目管理：修改光子嫩肤美容项目的相关信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/4850183c-e5ca-4573-854a-5eabb9fb47f6.png)
+![美容项目管理：修改光子嫩肤美容项目的相关信息](docs/images/08-mei-rong-xiang-mu-guan-li.png)
 
 美容物品管理：管理美容物品，支持搜索增删改查操作
 
-![美容物品管理：管理美容物品，支持搜索增删改查操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/1ed64ce7-7d2f-4894-8528-9d8dfc1ba637.png)
+![美容物品管理：管理美容物品，支持搜索增删改查操作](docs/images/09-mei-rong-wu-pin-guan-li.png)
 
 美容物品管理：展示美容物品列表，支持增删改查操作
 
-![美容物品管理：展示美容物品列表，支持增删改查操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/38aac776-7d1d-4057-8c6b-a6da22aecba2.png)
+![美容物品管理：展示美容物品列表，支持增删改查操作](docs/images/10-mei-rong-wu-pin-guan-li.png)
 
 项目消耗管理页：管理美容项目对应的物品消耗信息
 
-![项目消耗管理页：管理美容项目对应的物品消耗信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/0ef784db-ca0c-4a2a-8e99-632e88dc357c.png)
+![项目消耗管理页：管理美容项目对应的物品消耗信息](docs/images/11-xiang-mu-xiao-hao-guan-li.png)
 
 美容百科管理：对美容百科资讯进行增删改查管理
 
-![美容百科管理：对美容百科资讯进行增删改查管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/7fb15957-bab5-4796-8d37-cd98e0cbb2b6.png)
+![美容百科管理：对美容百科资讯进行增删改查管理](docs/images/12-mei-rong-bai-ke-guan-li.png)
 
 预约管理页：管理员查看并管理用户的美容预约信息
 
-![预约管理页：管理员查看并管理用户的美容预约信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/5948d53f-69fd-4741-8c2e-354a3be803bc.png)
+![预约管理页：管理员查看并管理用户的美容预约信息](docs/images/13-yu-yue-guan-li.png)
 
 订单管理页：管理员查看并管理美容服务订单
 
-![订单管理页：管理员查看并管理美容服务订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/1087940e-c541-4f48-8d4e-dcb9cbddea6c.png)
+![订单管理页：管理员查看并管理美容服务订单](docs/images/14-ding-dan-guan-li.png)
 
 订单管理页：管理员查看并管理平台的美容服务订单
 
-![订单管理页：管理员查看并管理平台的美容服务订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/d209f7c6-d87d-459f-8c07-2e958de7fba3.png)
+![订单管理页：管理员查看并管理平台的美容服务订单](docs/images/15-ding-dan-guan-li.png)
 
 
 ###### 美容师端
@@ -118,15 +118,15 @@
 
 订单管理：展示美容师的服务订单，支持搜索筛选
 
-![订单管理：展示美容师的服务订单，支持搜索筛选](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/c936e4a2-321d-435e-8d22-5b7439c35dea.png)
+![订单管理：展示美容师的服务订单，支持搜索筛选](docs/images/16-ding-dan-guan-li.png)
 
 订单评价页：查看用户提交的服务订单评价内容
 
-![订单评价页：查看用户提交的服务订单评价内容](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/323d9c61-cbf1-4560-84c8-8b8cab1e1d5d.png)
+![订单评价页：查看用户提交的服务订单评价内容](docs/images/17-ding-dan-ping-jia.png)
 
 预约管理页：查看并管理用户的美容预约信息
 
-![预约管理页：查看并管理用户的美容预约信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/8af16684-0292-419d-864f-51d193601be8.png)
+![预约管理页：查看并管理用户的美容预约信息](docs/images/18-yu-yue-guan-li.png)
 
 
 ###### 用户端
@@ -146,47 +146,47 @@
 
 注册页：填写注册信息，完成莱美美容账号注册
 
-![注册页：填写注册信息，完成莱美美容账号注册](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/c53f9646-6558-4841-8792-450d88003fee.png)
+![注册页：填写注册信息，完成莱美美容账号注册](docs/images/19-zhu-ce.png)
 
 登录页：输入账号密码，登录莱美美容系统
 
-![登录页：输入账号密码，登录莱美美容系统](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/15412d46-2efc-45f8-8675-2bf1686691e5.png)
+![登录页：输入账号密码，登录莱美美容系统](docs/images/20-deng-lu.png)
 
 首页：展示美容项目推荐与平台主推医美项目
 
-![首页：展示美容项目推荐与平台主推医美项目](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/e21f193a-6ad3-4926-8852-9e53e2274e6e.png)
+![首页：展示美容项目推荐与平台主推医美项目](docs/images/21-shou-ye.png)
 
 列表页：展示各类美容项目及价格，供用户浏览选择
 
-![列表页：展示各类美容项目及价格，供用户浏览选择](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/1498872f-07c5-4169-827d-884643287411.png)
+![列表页：展示各类美容项目及价格，供用户浏览选择](docs/images/22-lie-biao.png)
 
 详情页：展示光子嫩肤美容项目详情及用户评论
 
-![详情页：展示光子嫩肤美容项目详情及用户评论](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/392e34fa-c2d7-41e6-8f30-83c1b190a8d4.png)
+![详情页：展示光子嫩肤美容项目详情及用户评论](docs/images/23-xiang-qing.png)
 
 美容百科列表页：展示美容百科内容，支持搜索查询相关资讯
 
-![美容百科列表页：展示美容百科内容，支持搜索查询相关资讯](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/b491b18f-5f5d-4850-82c7-3d21643028ee.png)
+![美容百科列表页：展示美容百科内容，支持搜索查询相关资讯](docs/images/24-mei-rong-bai-ke-lie-biao.png)
 
 详情页：展示深圳眼部松弛矫正医院排名的百科内容
 
-![详情页：展示深圳眼部松弛矫正医院排名的百科内容](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/0a364b3e-7a6a-4772-8d24-3d9b01cd2e9d.png)
+![详情页：展示深圳眼部松弛矫正医院排名的百科内容](docs/images/25-xiang-qing.png)
 
 美容师列表页：展示美容师信息，介绍美莱美容机构
 
-![美容师列表页：展示美容师信息，介绍美莱美容机构](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/e37f2a43-ce57-429a-8873-7fe9d87837b1.png)
+![美容师列表页：展示美容师信息，介绍美莱美容机构](docs/images/26-mei-rong-shi-lie-biao.png)
 
 订单管理页：查看个人美容服务订单，可对完成订单评价
 
-![订单管理页：查看个人美容服务订单，可对完成订单评价](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/7eb7f18c-685c-407c-89c8-10bb67ecf5be.png)
+![订单管理页：查看个人美容服务订单，可对完成订单评价](docs/images/27-ding-dan-guan-li.png)
 
 预约记录页：展示用户个人的美容项目预约记录
 
-![预约记录页：展示用户个人的美容项目预约记录](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/754308b4-8fad-4619-842b-d93c15fe665b.png)
+![预约记录页：展示用户个人的美容项目预约记录](docs/images/28-yu-yue-ji-lu.png)
 
 个人信息修改页：修改个人账号的基本信息内容
 
-![个人信息修改页：修改个人账号的基本信息内容](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-29/11466bef-cc8b-4336-831b-f672a089e2fe.png)
+![个人信息修改页：修改个人账号的基本信息内容](docs/images/29-ge-ren-xin-xi-xiu-gai.png)
 
 
 ## 五、主要业务流程
